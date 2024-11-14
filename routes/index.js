@@ -1,7 +1,9 @@
 const routes = require("express").Router();
-const excisionController = require("../controllers/excisionRoute");
 
-routes.get("/", excisionController.aloneRoute);
-routes.get("/home", excisionController.homeRoute);
+// routes.get("/", (req, res) => {
+//   res.send("Database");
+// });
+
+routes.use("/users", require("./users"));
 
 module.exports = routes;
