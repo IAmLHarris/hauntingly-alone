@@ -5,7 +5,7 @@
     "description": "Friend API",
     "version": "1.0.0"
   },
-  "host": "https://hauntingly-alone.onrender.com",
+  "host": "hauntingly-alone.onrender.com",
   "basePath": "/",
   "schemes": ["https"],
   "paths": {
