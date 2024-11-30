@@ -3,6 +3,10 @@ const mongodb = require("../data/database");
 const ObjectId = require("mongodb").ObjectId;
 
 const getAll = async (req, res) => {
+  // #swagger.tags=['Users']
+  /*
+    #swagger.description = 'Gets all people from database and displays'
+  */
   const result = await mongodb
     .getDatabase()
     .db("week1proj")
@@ -15,6 +19,11 @@ const getAll = async (req, res) => {
 };
 
 const getSingle = async (req, res) => {
+  // #swagger.tags=['Users']
+  /*
+    #swagger.description = 'Gets individual person from database based on ID and displays'
+  */
+
   const userId = new ObjectId(req.params.id);
   const result = await mongodb
     .getDatabase()
@@ -28,6 +37,11 @@ const getSingle = async (req, res) => {
 };
 
 const addSingle = async (req, res) => {
+  // #swagger.tags=['Users']
+  /*
+    #swagger.description = 'Adds individual person to database'
+  */
+
   const user = {
     firstName: req.body.firstName,
     lastName: req.body.lastName,
@@ -50,6 +64,10 @@ const addSingle = async (req, res) => {
 };
 
 const updateSingle = async (req, res) => {
+  // #swagger.tags=['Users']
+  /*
+    #swagger.description = 'Edits individual person from database'
+  */
   const userId = new ObjectId(req.params.id);
   const user = {
     firstName: req.body.firstName,
@@ -73,6 +91,10 @@ const updateSingle = async (req, res) => {
 };
 
 const deleteSingle = async (req, res) => {
+  // #swagger.tags=['Users']
+  /*
+    #swagger.description = 'Removes individual person from database'
+  */
   const userId = new ObjectId(req.params.id);
 
   const result = await mongodb

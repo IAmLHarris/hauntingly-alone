@@ -1,8 +1,9 @@
 const routes = require("express").Router();
 
-const Post = require("../data/post");
+routes.use("/users", require("./users"));
 
 routes.get("/", (req, res) => {
+  // #swagger.tags=['Hello World']
   res.send("Database");
 });
 
